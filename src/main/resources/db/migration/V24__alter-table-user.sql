@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN eatery_id int DEFAULT 0;

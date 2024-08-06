@@ -1,0 +1,2 @@
+ALTER TABLE product ADD COLUMN image varchar(255) DEFAULT NULL;
+

@@ -1,0 +1,1 @@
+ALTER TABLE product ADD COLUMN note varchar(255) DEFAULT NULL;

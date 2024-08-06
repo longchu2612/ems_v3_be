@@ -1,0 +1,12 @@
+stages:
+  - build_dev
+
+build-job:
+  stage: build_dev
+  image: ubuntu:latest
+  script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
+    - sshpass -p $PASSWORD_DEV ssh -o StrictHostKeyChecking=no root@$END_POINT_DEV 'cd /opt/code;bash build-rtttms-api.sh;'
+  when: manual
+  only:
+    - dev

@@ -1,0 +1,29 @@
+package com.ems.application.entity;
+
+import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Entity
+@Data
+@EqualsAndHashCode(of = "id", callSuper = false)
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString(callSuper = true, exclude = {})
+public class VerificationToken extends EntityBase {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String token;
+    private String otp;
+    private LocalDateTime expiredTime;
+}
